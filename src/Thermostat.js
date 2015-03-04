@@ -3,27 +3,26 @@ var Thermostat = function() {
     this.PSM = true;
 };
 
-Thermostat.prototype.increaseTemperature = function(degrees){
+Thermostat.prototype.increaseTemperature = function(degrees) {
   this.currentTemperature += degrees;
   if (this.PSM) {
       this.currentTemperature = Math.min(25, this.currentTemperature);
   }
 };
 
-Thermostat.prototype.decreaseTemperature = function(degrees){
+Thermostat.prototype.decreaseTemperature = function(degrees) {
   this.currentTemperature -= degrees;
   this.currentTemperature = Math.max(10, this.currentTemperature);
 };
 
 
-Thermostat.prototype.PSMOnOff = function(mode){
+Thermostat.prototype.PSMOnOff = function() {
   this.PSM = false;
 };
 
-Thermostat.prototype.resetBtn = function(){
+Thermostat.prototype.resetBtn = function() {
   this.currentTemperature = 20;
 };
-
 
 
 
